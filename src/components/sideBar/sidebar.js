@@ -1,8 +1,9 @@
-import React , { Component } from 'react';
+import React from 'react';
 import Header from './header';
 import './sidebar.css';
 import Avatar from './avatar';
-import Nav from './list-nav'
+import Nav from './list-nav';
+
 const imagePath = process.env.PUBLIC_URL + '/assets/images/';
 let user = [
     {
@@ -35,22 +36,13 @@ let user = [
     },
 ]
 
-class SideBar extends Component{
-    constructor(){
-        super();
-    }
-    render(){
-        return (
-            <div className="row">
-                <div className="sidebar col-3">
-                    <Header />
-                    <Avatar user = {user}/>
-                    <Nav />
-                </div>
-            </div>
-
-           
-        )  
-    }
+const SideBar = ()=>{
+    return (
+        <div className="sidebar col-2">
+            <Header />
+            <Avatar user = {user}/>
+            <Nav />
+        </div>
+    )
 }
 export default SideBar;
